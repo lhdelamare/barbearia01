@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarberFlow | O Sistema Definitivo para Barbearias Modernas</title>
+    <meta name="description" content="Sistema completo de agendamento online, gestão de barbeiros, comissões automáticas e notificações por WhatsApp. Cadastre-se na lista de espera VIP.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Decoration Glows -->
+    <div class="glow-bg glow-top-left"></div>
+    <div class="glow-bg glow-bottom-right"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="brand-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
+                <span class="logo-text">Barber<span class="accent-text">Flow</span></span>
+            </a>
+            
+            <div class="nav-badge">
+                <span class="pulse-dot"></span>
+                <span>Em Breve • Lista VIP</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-grid">
+                    <!-- Left Hero Content -->
+                    <div class="hero-content">
+                        <div class="pill-tag">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>Revolução na Gestão da Sua Barbearia</span>
+                        </div>
+
+                        <h1 class="hero-title">
+                            Chega de agendas bagunçadas e <span class="gradient-text">horários vagos.</span>
+                        </h1>
+
+                        <p class="hero-subtitle">
+                            O sistema inteligente de agendamento 24/7 via WhatsApp, controle de comissões e gestão financeira projetado exclusivamente para barbearias de alto padrão.
+                        </p>
+
+                        <!-- Countdown Timer -->
+                        <div class="countdown-wrapper">
+                            <span class="countdown-label">Lançamento oficial da versão 1.0 em:</span>
+                            <div class="countdown-timer" id="countdown">
+                                <div class="timer-box">
+                                    <span class="timer-number" id="days">00</span>
+                                    <span class="timer-unit">dias</span>
+                                </div>
+                                <div class="timer-separator">:</div>
+                                <div class="timer-box">
+                                    <span class="timer-number" id="hours">00</span>
+                                    <span class="timer-unit">horas</span>
+                                </div>
+                                <div class="timer-separator">:</div>
+                                <div class="timer-box">
+                                    <span class="timer-number" id="minutes">00</span>
+                                    <span class="timer-unit">min</span>
+                                </div>
+                                <div class="timer-separator">:</div>
+                                <div class="timer-box">
+                                    <span class="timer-number" id="seconds">00</span>
+                                    <span class="timer-unit">seg</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stats Quick View -->
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-num">-80%</span>
+                                <span class="stat-desc">Faltas & No-Shows</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">+35%</span>
+                                <span class="stat-desc">Produtividade diária</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">24/7</span>
+                                <span class="stat-desc">Agendamento ativo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Form (Lista VIP) -->
+                    <div class="hero-card-wrapper">
+                        <div class="glass-card vip-card">
+                            <div class="card-header">
+                                <div class="vip-badge">
+                                    <i class="fa-solid fa-crown"></i>
+                                    <span>Acesso Prioritário VIP</span>
+                                </div>
+                                <h2>Garanta 50% OFF no Lançamento</h2>
+                                <p>Cadastre-se na lista de espera para testar gratuitamente por 30 dias e garantir desconto vitalício.</p>
+                            </div>
+
+                            <form id="vip-form" class="vip-form">
+                                <div class="form-group">
+                                    <label for="name"><i class="fa-regular fa-user"></i> Seu Nome</label>
+                                    <input type="text" id="name" name="name" placeholder="Ex: Lucas Silva" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone"><i class="fa-brands fa-whatsapp"></i> WhatsApp para Contato</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="barbershop"><i class="fa-solid fa-store"></i> Nome da Sua Barbearia</label>
+                                    <input type="text" id="barbershop" name="barbershop" placeholder="Ex: Barbearia Dom Pedro" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="team-size"><i class="fa-solid fa-users"></i> Quantidade de Barbeiros</label>
+                                    <select id="team-size" name="team-size" required>
+                                        <option value="" disabled selected>Selecione o tamanho da equipe</option>
+                                        <option value="1">Apenas eu (Barbeiro Solo)</option>
+                                        <option value="2-4">De 2 a 4 barbeiros</option>
+                                        <option value="5-9">De 5 a 9 barbeiros</option>
+                                        <option value="10+">10 ou mais barbeiros (Rede)</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="btn-primary" id="btn-submit">
+                                    <span>Garantir Meu Acesso VIP</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </form>
+
+                            <!-- Success Banner (Hidden by default) -->
+                            <div id="form-success" class="form-success hidden">
+                                <div class="success-icon">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+                                <h3>Inscrição Confirmada! 🚀</h3>
+                                <p>Sua vaga VIP está reservada com sucesso. Em breve nossa equipe entrará em contato via WhatsApp para liberar seu acesso em primeira mão.</p>
+                                <button type="button" class="btn-secondary" id="btn-reset">Cadastrar outra barbearia</button>
+                            </div>
+
+                            <div class="card-footer-benefits">
+                                <span><i class="fa-solid fa-shield-halved"></i> Sem cartão de crédito</span>
+                                <span><i class="fa-solid fa-gift"></i> 30 dias grátis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Showcase Section -->
+        <section class="features-section" id="recursos">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">RECURSOS EXCLUSIVOS</span>
+                    <h2>Tudo o que você precisa para <span class="gradient-text">escalar seu negócio</span></h2>
+                    <p>Desenvolvido pensando na rotina corrida do barbeiro moderno. Rápido, intuitivo e sem complicação.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <h3>Agendamento via WhatsApp</h3>
+                        <p>Seus clientes agendam o horário em menos de 30 segundos com um link personalizado, sem precisar instalar nenhum aplicativo.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-bell-concierge"></i>
+                        </div>
+                        <h3>Lembretes Anti-Falta</h3>
+                        <p>Notificações automáticas de confirmação por WhatsApp antes do horário agendado, reduzindo em até 80% o prejuízo com no-shows.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h3>Comissões Automáticas</h3>
+                        <p>Chega de contas no papel. Calcule automaticamente o repasse de cada barbeiro da sua equipe com regras e porcentagens flexíveis.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3>Gestão Financeira & Caixa</h3>
+                        <p>Acompanhe o faturamento diário, semanal e mensal, vendas de produtos (pomadas, óleos) e serviços mais lucrativos.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+                        <h3>Pagamento & Sinal Antecipado</h3>
+                        <p>Receba via PIX ou cartão de crédito na hora do agendamento ou cobre um sinal garantia para novos clientes.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <h3>Fidelização & Relatório de Clientes</h3>
+                        <p>Histórico completo de cortes de cada cliente, preferências, aniversário e programa de pontos de fidelidade automáticos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive ROI Calculator -->
+        <section class="calculator-section">
+            <div class="container">
+                <div class="glass-card calculator-card">
+                    <div class="calculator-header">
+                        <span class="section-tag">SIMULADOR DE ECONOMIA</span>
+                        <h2>Quanto a sua barbearia vai economizar?</h2>
+                        <p>Ajuste os valores abaixo e descubra o impacto do BarberFlow no seu faturamento mensal:</p>
+                    </div>
+
+                    <div class="calculator-grid">
+                        <div class="calculator-controls">
+                            <div class="slider-group">
+                                <div class="slider-label">
+                                    <span>Atendimentos por semana:</span>
+                                    <strong id="clients-val">80 clientes</strong>
+                                </div>
+                                <input type="range" id="slider-clients" min="20" max="400" value="80" step="10">
+                            </div>
+
+                            <div class="slider-group">
+                                <div class="slider-label">
+                                    <span>Preço médio do corte (R$):</span>
+                                    <strong id="price-val">R$ 50</strong>
+                                </div>
+                                <input type="range" id="slider-price" min="25" max="150" value="50" step="5">
+                            </div>
+
+                            <div class="slider-group">
+                                <div class="slider-label">
+                                    <span>Faltas semanais sem aviso (no-shows):</span>
+                                    <strong id="noshow-val">6 faltas</strong>
+                                </div>
+                                <input type="range" id="slider-noshow" min="1" max="30" value="6" step="1">
+                            </div>
+                        </div>
+
+                        <div class="calculator-results">
+                            <div class="result-box highlighted">
+                                <span class="result-title">Faturamento Recuperado (Estimado/mês)</span>
+                                <span class="result-number" id="res-money">R$ 960,00</span>
+                                <span class="result-note">recuperados com lembretes automáticos anti-falta</span>
+                            </div>
+
+                            <div class="result-box">
+                                <span class="result-title">Tempo Economizado no WhatsApp</span>
+                                <span class="result-number" id="res-hours">16 horas</span>
+                                <span class="result-note">de atendimento manual poupadas por mês</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">DÚVIDAS FREQUENTES</span>
+                    <h2>Perguntas <span class="gradient-text">Frequentes</span></h2>
+                </div>
+
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Quando o BarberFlow estará oficialmente disponível?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Estamos finalizando os testes da versão beta com barbearias parceiras. O lançamento oficial ocorrerá nas próximas semanas. Cadastrando-se na lista VIP acima, você será notificado em primeira mão.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Como funciona o desconto de 50% para a lista VIP?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Todos os cadastrados nesta página de espera receberão um cupom de 50% de desconto na assinatura mensal durante o primeiro ano, além de 30 dias de teste 100% gratuito.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Preciso instalar algum programa no computador?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Não! O BarberFlow é 100% na nuvem. Você pode acessar de qualquer celular, tablet ou computador conectado à internet.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Serve para barbeiros solos ou apenas para grandes equipes?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>O sistema foi desenhado para atender desde o profissional autônomo que atende sozinho até grandes redes de barbearia com dezenas de profissionais e filiais.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="logo-icon small">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
+                <span>Barber<span class="accent-text">Flow</span></span>
+            </div>
+
+            <p class="copyright">
+                © <span id="year">2026</span> BarberFlow. Todos os direitos reservados.
+            </p>
+
+            <div class="social-links">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toast-message">Mensagem de teste</span>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
